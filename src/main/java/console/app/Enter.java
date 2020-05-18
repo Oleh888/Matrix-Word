@@ -31,5 +31,4 @@ public class Enter {
         Scanner scanner = new Scanner(System.in);
         word = scanner.next().toUpperCase();
     }
-
 }
