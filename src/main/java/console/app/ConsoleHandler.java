@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ConsoleHandler {
 
-    public static String enterSequence() {
+    public String enterSequence() {
         System.out.println("Please, enter your sequence of "
                 + "characters that have string of size N^2,"
                 + " that describes square matrix of characters N*N");
@@ -17,7 +17,7 @@ public class ConsoleHandler {
         return sequence;
     }
 
-    public static String enterWord() {
+    public String enterWord() {
         System.out.println("Please, enter your word");
         Scanner scanner = new Scanner(System.in);
         return scanner.next().toUpperCase();

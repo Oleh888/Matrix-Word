@@ -6,6 +6,7 @@ public class Main {
         String sequence = consoleHandler.enterSequence();
         String word = consoleHandler. enterWord();
         MatrixService matrix = new MatrixService();
-        System.out.println("result sequence of cells is " + matrix.getCharsSequence(sequence, word));
+        System.out.println("result sequence of cells is "
+                + matrix.getCharsSequence(sequence, word));
     }
 }

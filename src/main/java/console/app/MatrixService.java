@@ -18,10 +18,10 @@ public class MatrixService {
         return sequenceArray;
     }
 
-    public String getCharsSequence() {
+    public String getCharsSequence(String sequence, String word) {
         String result = "This word does not exist in the matrix";
         StringBuilder builder = new StringBuilder();
-        if (exist(createMatrix(ConsoleHandler.enterSequence()), builder)) {
+        if (exist(createMatrix(sequence), builder, word)) {
             String[] tempArray = builder.toString().split(" ");
             builder = new StringBuilder();
             for (int i = tempArray.length - 1; i >= 0; i--) {
@@ -32,8 +32,7 @@ public class MatrixService {
         return result;
     }
 
-    private boolean exist(char[][] board, StringBuilder builder) {
-        String word = ConsoleHandler.enterWord();
+    private boolean exist(char[][] board, StringBuilder builder, String word) {
         int width = board.length;
         int length = board[0].length;
         boolean result = false;
@@ -56,7 +55,7 @@ public class MatrixService {
         }
         if (board[i][j] == word.charAt(k)) {
             char temp = board[i][j];
-            if (k == word.length() - 1) {
+            if (k == word.length() - 1
                     || checkIndex(builder, board, word, i - 1, j, k + 1)
                     || checkIndex(builder, board, word, i + 1, j, k + 1)
                     || checkIndex(builder, board, word, i, j - 1, k + 1)
@@ -67,9 +66,5 @@ public class MatrixService {
             board[i][j] = temp;
         }
         return false;
-    }
-
-    private void appendIndex(StringBuilder builder, int i, int j) {
-        builder.append("[").append(i).append(",").append(j).append("]").append(" ");
     }
 }
