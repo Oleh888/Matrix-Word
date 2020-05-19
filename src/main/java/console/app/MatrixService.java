@@ -57,13 +57,11 @@ public class MatrixService {
         if (board[i][j] == word.charAt(k)) {
             char temp = board[i][j];
             if (k == word.length() - 1) {
-                appendIndex(builder, i, j);
-                return true;
-            } else if (checkIndex(builder, board, word, i - 1, j, k + 1)
+                    || checkIndex(builder, board, word, i - 1, j, k + 1)
                     || checkIndex(builder, board, word, i + 1, j, k + 1)
                     || checkIndex(builder, board, word, i, j - 1, k + 1)
                     || checkIndex(builder, board, word, i, j + 1, k + 1)) {
-                appendIndex(builder, i, j);
+                builder.append("[").append(i).append(",").append(j).append("]").append(" ");
                 return true;
             }
             board[i][j] = temp;
