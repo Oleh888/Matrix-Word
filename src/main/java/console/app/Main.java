@@ -8,5 +8,7 @@ public class Main {
         MatrixService matrix = new MatrixService();
         System.out.println("result sequence of cells is "
                 + matrix.getCharsSequence(sequence, word));
+        System.out.println("tratatam");
+        int a = 4;
     }
 }
